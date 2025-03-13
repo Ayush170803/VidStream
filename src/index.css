@@ -1,0 +1,527 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+#Bodytag {
+  display: flex;
+}
+
+#heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#header {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  margin: 10px 10px;
+  gap: 20px;
+  cursor: pointer;
+}  
+
+#searching {
+  display: flex;
+  gap: 20px;
+}
+
+#searching input {
+  width: 551px;
+  height: 30px;
+}
+
+#searching button {
+  width: 50px;
+}
+
+#usertag {
+  padding-right: 20px;
+}
+
+#sidebar {
+  width: 250px;
+  background-color: #f9f9f9;
+  color: #333;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 10px;
+  font-family: Arial, sans-serif;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+#sidebar h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 5px;
+}
+
+#sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+#sidebar ul li {
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+  border-radius: 5px;
+}
+
+#sidebar ul li.btn {
+  background: #e0e0e0;
+}
+
+#sidebar ul li:active {
+  background: #d0d0d0;
+}
+
+#sidebar ul li::before {
+  content: "▶ ";
+  font-size: 12px;
+  color: #007bff;
+  margin-right: 10px;
+}
+
+#buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+#videoitems {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px; 
+  justify-content: center;
+  padding: 20px;
+}
+
+.video-card {
+  width: 320px; 
+  background-color: white; 
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.video-card.btn {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2);
+}
+
+.thumbnail {
+  width: 100%;
+  height: 180px; 
+  object-fit: cover;
+  border-radius: 12px 12px 0 0;
+}
+
+.video-info {
+  padding: 12px;
+  color: black;
+  font-family: Arial, sans-serif;
+}
+
+.video-title {
+  font-size: 15px;
+  font-weight: bold;
+  margin-bottom: 6px;
+  color: black;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.channel-name {
+  font-size: 13px;
+  color:black;
+  margin-bottom: 6px;
+}
+
+.video-stats {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: black;
+  margin-bottom: 6px;
+}
+
+.publish-date {
+  font-size: 12px;
+  color:black;
+}
+
+.buttons {
+  font-size: 13px;
+  padding: 13px 13px;
+  background-color: #FFFFFF;
+  border-radius: 20px;
+  border-style: none;
+  box-sizing: border-box;
+  cursor: pointer;
+  font-family: Monument;
+  font-weight: 800;
+  text-align: center;
+  background-color: white;
+  box-shadow: gray 0 -2px 4px inset;
+  transform: scale(0.95);
+}
+
+.buttons:hover {
+  background-color: aliceblue;
+}
+
+#watchcards {
+   text-decoration: none;
+}
+
+#watchcontainer {
+  display: flex;
+  margin: 40px 50px;
+}
+
+#livecontainer {
+  margin-left: 15px;
+  border: 1px solid black;
+  height: 70vh;
+  width: 35vw;
+  background-color: rgb(232, 232, 232);
+  border-radius: 5px;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+#chatmessage {
+  display: flex;
+  margin: 5px 5px;
+}
+
+#messagename {
+  font-size: 17px;
+  display: flex;
+  align-items: center;
+  margin: 2px;
+}
+
+#messagename:hover {
+  background-color: rgb(174, 169, 169);
+}
+
+#name {
+  padding-left: 5px;
+  font-family: Monument;
+  font-weight: 600;
+}
+
+#message {
+  padding-left: 10px;
+}
+
+#watchcontainer iframe {
+  width: 55vw;
+  height: 70vh;
+}
+
+#advideocard {
+  padding: 1px;
+  margin: 1px;
+  border: 1px solid red;
+}
+
+#searchsuggest {
+  position: absolute;
+  width: 552px;
+  background: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000; 
+  top: 50px; 
+  left: 50.7%; 
+  transform: translateX(-50%);
+}
+
+#searchsuggest ul {
+  list-style: none;
+  max-height: 300px; 
+  overflow-y: auto;
+}
+
+#searchsuggest ul li {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+  transition: background 0.5s;
+}
+
+#searchsuggest ul li:hover {
+  background: #973838af;
+}
+
+#chatting {
+  padding: 2px 20px;
+  display: flex;
+}
+
+#inputchat {
+  border: 2px solid black;
+  height: 30px;
+  width: 88%;
+}
+
+#chatsubmit {
+  margin-top: 1px;
+  margin-left: 3px;
+  width: 100px;
+  height: 28px;
+  background: linear-gradient(135deg, #00ff4c, #00ff5e); /* Beautiful blue gradient */
+  color: black;
+  font-size: 14px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#chatsubmit:hover {
+  background: linear-gradient(135deg, #cb551e, #cc007a);
+  transform: scale(1.02);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Active click effect */
+#chatsubmit:active {
+  transform: scale(0.95);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+#formdiv
+{
+  height: 90vh;
+  width:90vw;
+  padding: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+#form {
+  background: rgb(244, 238, 238);
+  font-family: Monument;
+  padding: 40px;
+  width: 400px;
+  height: 430px;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Add fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+h1 {
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 24px;
+}
+
+.inputauth {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: 0.3s ease-in-out;
+}
+
+
+.inputauth:focus {
+  border-color: #fe4f5e;
+  outline: none;
+  box-shadow: 0 0 8px rgba(79, 172, 254, 0.5);
+}
+
+#authbutton {
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(to right, #0968c7, #01038d);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  margin-top: 10px;
+}
+
+#authbutton:hover {
+  background: linear-gradient(to right, #01038d, #0968c7);
+  transform: scale(1.05);
+}
+
+#authbutton:active {
+  transform: scale(0.98);
+}
+#signupdiv
+{
+  padding: 10px;
+  margin: 10px;
+}
+#signupdiv h3
+{
+  cursor: pointer;
+  color: rgb(86, 80, 80);
+}
+#signuplink
+{
+  text-decoration: none;
+  color: black;
+  margin: 5px;
+  padding: 5px;
+}
+#errormessage
+{
+  color: red;
+  font-weight: 900;
+  font-family: Monument;
+}
+#signoutbtn
+{
+  background: linear-gradient(to right, #2b6bff, #0926b5);
+    color: white;
+    font-size: 10px;
+    font-weight: bold;
+    padding: 12px 14px;
+    margin-right: 6px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 10px rgba(65, 192, 255, 0.4);
+}
+#signoutbtn:hover {
+  background: linear-gradient(to right, #0926b5, #2b6bff);
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(65, 255, 252, 0.5);
+}
+
+#bodyside
+{
+  display: flex;
+}
+
+#searchbtn {
+
+  background: linear-gradient(to right, #0968c7, #01038d);
+  color: white;
+  border: none;
+  font-size: 12px;
+  width: 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#searchbtn:hover {
+  background: linear-gradient(to right, #01038d, #0968c7);
+  transform: scale(1.05); /* Slightly larger */
+}
+
+
+
+
+
+
+
+@media (max-width: 768px) {
+
+  #Bodytag {
+    flex-direction: column;
+  }
+
+  #heading {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  #searching {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+  }
+
+  #sidebar {
+    width: 100%;
+    padding: 15px;
+    margin: 0;
+  }
+
+  #videoitems {
+    justify-content: center;
+    padding: 10px;
+  }
+  #watchcontainer {
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+    width: 100%;
+  }
+
+  #watchcontainer iframe {
+    width: 100%;
+    height: 50vh;
+  }
+
+  #livecontainer {
+    width: 95%;
+    height: 40vh;
+    margin: 10px auto 0 auto;
+    order: 2; 
+  }
+
+  #chatting {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+
+  #inputchat {
+    width: 90%;
+  }
+
+  #chatsubmit {
+    width: 100%;
+    margin-top: 5px;
+  }
+}
