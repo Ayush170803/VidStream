@@ -4,6 +4,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 Allow Tempoarary Access to <b>https://cors-anywhere.herokuapp.com/corsdemo</b>
 
+For Testing Id:- Admin@gmail.com pwd:- Admin123
+
 ## Available Scripts
 
 In the project directory, you can run:
